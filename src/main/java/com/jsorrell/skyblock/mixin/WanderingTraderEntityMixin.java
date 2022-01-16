@@ -14,6 +14,8 @@ import com.jsorrell.skyblock.helpers.WanderingTrader;
 
 @Mixin(WanderingTraderEntity.class)
 public abstract class WanderingTraderEntityMixin {
+  // 流浪商人
+
   @Redirect(
       method = "fillRecipes",
       at =

@@ -19,6 +19,7 @@ import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 
 import com.jsorrell.skyblock.gen.SkyBlockGenerationSettings;
 
+// 世界生成器添加 新的生成选项
 @Mixin(GeneratorOptions.class)
 public class GeneratorOptionsMixin {
 
@@ -40,12 +41,16 @@ public class GeneratorOptionsMixin {
       Registry<DimensionType> dimensionTypeRegistry,
       Registry<Biome> biomeRegistry,
       Registry<ChunkGeneratorSettings> settingsRegistry) {
+
+    // 判断 世界生成类型
     if (SkyBlockGenerationSettings.NAME.equals(generatorSettingsName)) {
+      // 世界尺寸定义
       SimpleRegistry<DimensionOptions> dimensionOptions =
           SkyBlockGenerationSettings.getSkyBlockDimensionOptions(
               dimensionTypeRegistry, biomeRegistry, settingsRegistry, seed);
-      GeneratorOptions generatorOptions =
-          new GeneratorOptions(seed, generateStructures, false, dimensionOptions);
+
+      GeneratorOptions generatorOptions = new GeneratorOptions(seed, generateStructures, false, dimensionOptions);
+
       cir.setReturnValue(generatorOptions);
     }
   }

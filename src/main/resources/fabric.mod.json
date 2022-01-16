@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "skyblock",
+  "id": "skyblock_fqbq",
   "version": "${version}",
   "name": "SkyBlock",
   "description": "Empty world generation with new ways to obtain resources",
   "authors": [
-    "jsorrell"
+    "jsorrell",
+    "fqbq"
   ],
   "contact": {
     "sources": "https://github.com/jsorrell/skyblock",

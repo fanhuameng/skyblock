@@ -22,8 +22,7 @@ public class SkyBlockExtension implements CarpetExtension, ModInitializer {
   public void onInitialize() {
     settingsManager = new SettingsManager(Build.VERSION, Build.ID, Build.NAME);
     settingsManager.parseSettingsClass(SkyBlockSettings.class);
-    Registry.register(
-        Registry.CHUNK_GENERATOR, SkyBlockGenerationSettings.NAME, SkyBlockChunkGenerator.CODEC);
+    Registry.register(Registry.CHUNK_GENERATOR, SkyBlockGenerationSettings.NAME, SkyBlockChunkGenerator.CODEC);
     Criteria.registerAll();
   }
 

@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 import net.minecraft.client.world.GeneratorType;
 
+// 世界生成类型
+
 @Environment(EnvType.CLIENT)
 @Mixin(GeneratorType.class)
 public interface GeneratorTypeAccessor {

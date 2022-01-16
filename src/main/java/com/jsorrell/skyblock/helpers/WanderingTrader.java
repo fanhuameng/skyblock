@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffers;
 
 public class WanderingTrader {
+  // 流浪商人交易
   public static final Int2ObjectMap<TradeOffers.Factory[]> WANDERING_TRADER_SKYBLOCK_TRADES;
 
   static {
@@ -21,14 +22,17 @@ public class WanderingTrader {
         new ArrayList<>(Arrays.asList(TradeOffers.WANDERING_TRADER_TRADES.get(2)));
 
     tier1Trades.addAll(
+        // 直接生成一类的
         Arrays.asList(
-            // Tall Flowers
-            new TradeOffers.SellItemFactory(Items.SUNFLOWER, 1, 1, 12, 1),
-            new TradeOffers.SellItemFactory(Items.LILAC, 1, 1, 12, 1),
-            new TradeOffers.SellItemFactory(Items.ROSE_BUSH, 1, 1, 12, 1),
-            new TradeOffers.SellItemFactory(Items.PEONY, 1, 1, 12, 1)));
+                new TradeOffers.SellItemFactory(Items.SUNFLOWER, 1, 1, 12, 1),
+                new TradeOffers.SellItemFactory(Items.LILAC, 1, 1, 12, 1),
+                new TradeOffers.SellItemFactory(Items.ROSE_BUSH, 1, 1, 12, 1),
+                new TradeOffers.SellItemFactory(Items.PEONY, 1, 1, 12, 1))
+        );
+
 
     tier2Trades.addAll(
+        // 可替换商品，需要一个或多个物品来换
         Arrays.asList(
             // Tier 2 Trades
             new TradeOffers.ProcessItemFactory(Items.BUCKET, 1, 16, Items.LAVA_BUCKET, 1, 1, 1)));

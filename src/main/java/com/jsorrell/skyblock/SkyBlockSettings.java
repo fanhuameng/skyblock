@@ -86,7 +86,6 @@ public class SkyBlockSettings {
         String string) {
       doUsefulComposters = !newValue.toLowerCase(Locale.ROOT).equals("false");
       usefulCompostersNeedRedstone = newValue.toLowerCase(Locale.ROOT).equals("redstone");
-
       return newValue;
     }
   }

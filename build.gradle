@@ -9,10 +9,17 @@ repositories {
 	maven {
 		url 'https://masa.dy.fi/maven'
 	}
+	maven {
+		url 'https://maven.aliyun.com/nexus/content/groups/public'
+	}
+	maven {
+		url 'https://repository.hanbings.io/proxy'
+	}
+	mavenCentral()
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.minecraft_version + "-" + project.mod_version
@@ -31,7 +38,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	// javax.annotation.Nullable/Nonnull
-	compileOnly "com.google.code.findbugs:jsr305:3.0.1"
+	compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
 task zipDatapack(type: Zip) {
@@ -71,7 +78,7 @@ processResources {
 		expand "version": project.version
 	}
 
-	// copy everything else, that's not the mcmod.info
+	// copy everything else, that's not the mc mod.info
 	from(sourceSets.main.resources.srcDirs) {
 		exclude "fabric.mod.json"
 	}
